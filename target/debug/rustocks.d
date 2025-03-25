@@ -1,1 +1,1 @@
-C:\Users\myers\OneDrive\Desktop\RustStocks\rustocks\target\debug\rustocks.exe: C:\Users\myers\OneDrive\Desktop\RustStocks\rustocks\src\main.rs
+/Users/myersben9/Desktop/gitprojects/rustocks/target/debug/rustocks: /Users/myersben9/Desktop/gitprojects/rustocks/src/main.rs
