@@ -1,51 +1,46 @@
 syntax = "proto3";
+
 package yahoo;
 
-option go_package = "yahoo-stream/proto";  // Add this line
-
-
 message PricingData {
+    enum QuoteType {
+        NONE = 0;
+        ALTSYMBOL = 5;
+        HEARTBEAT = 7;
+        EQUITY = 8;
+        INDEX = 9;
+        MUTUALFUND = 11;
+        MONEYMARKET = 12;
+        OPTION = 13;
+        CURRENCY = 14;
+        WARRANT = 15;
+        BOND = 17;
+        FUTURE = 18;
+        ETF = 20;
+        COMMODITY = 23;
+        ECNQUOTE = 28;
+        CRYPTOCURRENCY = 41;
+        INDICATOR = 42;
+        INDUSTRY = 1000;
+    }
 
-enum QuoteType {
-    NONE = 0;
-    ALTSYMBOL = 5;
-    HEARTBEAT = 7;
-    EQUITY = 8;
-    INDEX = 9;
-    MUTUALFUND = 11;
-    MONEYMARKET = 12;
-    OPTION = 13;
-    CURRENCY = 14;
-    WARRANT = 15;
-    BOND = 17;
-    FUTURE = 18;
-    ETF = 20;
-    COMMODITY = 23;
-    ECNQUOTE = 28;
-    CRYPTOCURRENCY = 41;
-    INDICATOR = 42;
-    INDUSTRY = 1000;
-};
+    enum OptionType {
+        CALL = 0;
+        PUT = 1;
+    }
 
-enum OptionType {
-    CALL = 0;
-    PUT = 1;
-};
-
-enum MarketHoursType {
-    PRE_MARKET = 0;
-    REGULAR_MARKET = 1;
-    POST_MARKET = 2;
-    EXTENDED_HOURS_MARKET = 3;
-};
+    enum MarketHoursType {
+        PRE_MARKET = 0;
+        REGULAR_MARKET = 1;
+        POST_MARKET = 2;
+        EXTENDED_HOURS_MARKET = 3;
+    }
 
     string id = 1;
     float price = 2;
     sint64 time = 3;
     string currency = 4;
     string exchange = 5;
-
-
     QuoteType quoteType = 6;
     MarketHoursType marketHours = 7;
     float changePercent = 8;
@@ -70,8 +65,8 @@ enum MarketHoursType {
     sint64 priceHint = 27;
     sint64 vol_24hr = 28;
     sint64 volAllCurrencies = 29;
-    string fromcurrency = 30;
+    string fromCurrency = 30;
     string lastMarket = 31;
     double circulatingSupply = 32;
     double marketcap = 33;
-};
+}
